@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2AB9118B188E316800EB7AF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB9118A188E316800EB7AF8 /* Foundation.framework */; };
+		2AB9118D188E316800EB7AF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB9118C188E316800EB7AF8 /* CoreGraphics.framework */; };
+		2AB9118F188E316800EB7AF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB9118E188E316800EB7AF8 /* UIKit.framework */; };
+		2AB91195188E316800EB7AF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AB91193188E316800EB7AF8 /* InfoPlist.strings */; };
+		2AB91197188E316800EB7AF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB91196188E316800EB7AF8 /* main.m */; };
+		2AB9119B188E316800EB7AF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9119A188E316800EB7AF8 /* AppDelegate.m */; };
+		2AB9119E188E316800EB7AF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB9119C188E316800EB7AF8 /* Main.storyboard */; };
+		2AB911A1188E316800EB7AF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB911A0188E316800EB7AF8 /* ViewController.m */; };
+		2AB911A3188E316800EB7AF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AB911A2188E316800EB7AF8 /* Images.xcassets */; };
+		2AB911AA188E316800EB7AF8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB911A9188E316800EB7AF8 /* XCTest.framework */; };
+		2AB911AB188E316800EB7AF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB9118A188E316800EB7AF8 /* Foundation.framework */; };
+		2AB911AC188E316800EB7AF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB9118E188E316800EB7AF8 /* UIKit.framework */; };
+		2AB911B4188E316800EB7AF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AB911B2188E316800EB7AF8 /* InfoPlist.strings */; };
+		2AB911B6188E316800EB7AF8 /* JZRefreshControlExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB911B5188E316800EB7AF8 /* JZRefreshControlExampleTests.m */; };
+		2AB911C6188E31EA00EB7AF8 /* JZRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB911C5188E31EA00EB7AF8 /* JZRefreshControl.m */; };
+		2AB911C9188E327600EB7AF8 /* MyRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB911C8188E327600EB7AF8 /* MyRefreshControl.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2AB911AD188E316800EB7AF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AB9117F188E316800EB7AF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AB91186188E316800EB7AF8;
+			remoteInfo = JZRefreshControlExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2AB91187188E316800EB7AF8 /* JZRefreshControlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JZRefreshControlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AB9118A188E316800EB7AF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2AB9118C188E316800EB7AF8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2AB9118E188E316800EB7AF8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2AB91192188E316800EB7AF8 /* JZRefreshControlExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JZRefreshControlExample-Info.plist"; sourceTree = "<group>"; };
+		2AB91194188E316800EB7AF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2AB91196188E316800EB7AF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2AB91198188E316800EB7AF8 /* JZRefreshControlExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JZRefreshControlExample-Prefix.pch"; sourceTree = "<group>"; };
+		2AB91199188E316800EB7AF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2AB9119A188E316800EB7AF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2AB9119D188E316800EB7AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2AB9119F188E316800EB7AF8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2AB911A0188E316800EB7AF8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2AB911A2188E316800EB7AF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2AB911A8188E316800EB7AF8 /* JZRefreshControlExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JZRefreshControlExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AB911A9188E316800EB7AF8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2AB911B1188E316800EB7AF8 /* JZRefreshControlExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JZRefreshControlExampleTests-Info.plist"; sourceTree = "<group>"; };
+		2AB911B3188E316800EB7AF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2AB911B5188E316800EB7AF8 /* JZRefreshControlExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZRefreshControlExampleTests.m; sourceTree = "<group>"; };
+		2AB911C4188E31EA00EB7AF8 /* JZRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZRefreshControl.h; path = ../JZRefreshControl/JZRefreshControl.h; sourceTree = "<group>"; };
+		2AB911C5188E31EA00EB7AF8 /* JZRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZRefreshControl.m; path = ../JZRefreshControl/JZRefreshControl.m; sourceTree = "<group>"; };
+		2AB911C7188E327600EB7AF8 /* MyRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRefreshControl.h; sourceTree = "<group>"; };
+		2AB911C8188E327600EB7AF8 /* MyRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRefreshControl.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AB91184188E316800EB7AF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB9118D188E316800EB7AF8 /* CoreGraphics.framework in Frameworks */,
+				2AB9118F188E316800EB7AF8 /* UIKit.framework in Frameworks */,
+				2AB9118B188E316800EB7AF8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AB911A5188E316800EB7AF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB911AA188E316800EB7AF8 /* XCTest.framework in Frameworks */,
+				2AB911AC188E316800EB7AF8 /* UIKit.framework in Frameworks */,
+				2AB911AB188E316800EB7AF8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AB9117E188E316800EB7AF8 = {
+			isa = PBXGroup;
+			children = (
+				2AB911C3188E31D700EB7AF8 /* JZRefreshControl */,
+				2AB91190188E316800EB7AF8 /* JZRefreshControlExample */,
+				2AB911AF188E316800EB7AF8 /* JZRefreshControlExampleTests */,
+				2AB91189188E316800EB7AF8 /* Frameworks */,
+				2AB91188188E316800EB7AF8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2AB91188188E316800EB7AF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AB91187188E316800EB7AF8 /* JZRefreshControlExample.app */,
+				2AB911A8188E316800EB7AF8 /* JZRefreshControlExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AB91189188E316800EB7AF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AB9118A188E316800EB7AF8 /* Foundation.framework */,
+				2AB9118C188E316800EB7AF8 /* CoreGraphics.framework */,
+				2AB9118E188E316800EB7AF8 /* UIKit.framework */,
+				2AB911A9188E316800EB7AF8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AB91190188E316800EB7AF8 /* JZRefreshControlExample */ = {
+			isa = PBXGroup;
+			children = (
+				2AB911C7188E327600EB7AF8 /* MyRefreshControl.h */,
+				2AB911C8188E327600EB7AF8 /* MyRefreshControl.m */,
+				2AB91199188E316800EB7AF8 /* AppDelegate.h */,
+				2AB9119A188E316800EB7AF8 /* AppDelegate.m */,
+				2AB9119C188E316800EB7AF8 /* Main.storyboard */,
+				2AB9119F188E316800EB7AF8 /* ViewController.h */,
+				2AB911A0188E316800EB7AF8 /* ViewController.m */,
+				2AB911A2188E316800EB7AF8 /* Images.xcassets */,
+				2AB91191188E316800EB7AF8 /* Supporting Files */,
+			);
+			path = JZRefreshControlExample;
+			sourceTree = "<group>";
+		};
+		2AB91191188E316800EB7AF8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2AB91192188E316800EB7AF8 /* JZRefreshControlExample-Info.plist */,
+				2AB91193188E316800EB7AF8 /* InfoPlist.strings */,
+				2AB91196188E316800EB7AF8 /* main.m */,
+				2AB91198188E316800EB7AF8 /* JZRefreshControlExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2AB911AF188E316800EB7AF8 /* JZRefreshControlExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				2AB911B5188E316800EB7AF8 /* JZRefreshControlExampleTests.m */,
+				2AB911B0188E316800EB7AF8 /* Supporting Files */,
+			);
+			path = JZRefreshControlExampleTests;
+			sourceTree = "<group>";
+		};
+		2AB911B0188E316800EB7AF8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2AB911B1188E316800EB7AF8 /* JZRefreshControlExampleTests-Info.plist */,
+				2AB911B2188E316800EB7AF8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2AB911C3188E31D700EB7AF8 /* JZRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				2AB911C4188E31EA00EB7AF8 /* JZRefreshControl.h */,
+				2AB911C5188E31EA00EB7AF8 /* JZRefreshControl.m */,
+			);
+			name = JZRefreshControl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2AB91186188E316800EB7AF8 /* JZRefreshControlExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AB911B9188E316800EB7AF8 /* Build configuration list for PBXNativeTarget "JZRefreshControlExample" */;
+			buildPhases = (
+				2AB91183188E316800EB7AF8 /* Sources */,
+				2AB91184188E316800EB7AF8 /* Frameworks */,
+				2AB91185188E316800EB7AF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JZRefreshControlExample;
+			productName = JZRefreshControlExample;
+			productReference = 2AB91187188E316800EB7AF8 /* JZRefreshControlExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2AB911A7188E316800EB7AF8 /* JZRefreshControlExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AB911BC188E316800EB7AF8 /* Build configuration list for PBXNativeTarget "JZRefreshControlExampleTests" */;
+			buildPhases = (
+				2AB911A4188E316800EB7AF8 /* Sources */,
+				2AB911A5188E316800EB7AF8 /* Frameworks */,
+				2AB911A6188E316800EB7AF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AB911AE188E316800EB7AF8 /* PBXTargetDependency */,
+			);
+			name = JZRefreshControlExampleTests;
+			productName = JZRefreshControlExampleTests;
+			productReference = 2AB911A8188E316800EB7AF8 /* JZRefreshControlExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AB9117F188E316800EB7AF8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Jeremy Zedell";
+				TargetAttributes = {
+					2AB911A7188E316800EB7AF8 = {
+						TestTargetID = 2AB91186188E316800EB7AF8;
+					};
+				};
+			};
+			buildConfigurationList = 2AB91182188E316800EB7AF8 /* Build configuration list for PBXProject "JZRefreshControlExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AB9117E188E316800EB7AF8;
+			productRefGroup = 2AB91188188E316800EB7AF8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AB91186188E316800EB7AF8 /* JZRefreshControlExample */,
+				2AB911A7188E316800EB7AF8 /* JZRefreshControlExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AB91185188E316800EB7AF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB911A3188E316800EB7AF8 /* Images.xcassets in Resources */,
+				2AB91195188E316800EB7AF8 /* InfoPlist.strings in Resources */,
+				2AB9119E188E316800EB7AF8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AB911A6188E316800EB7AF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB911B4188E316800EB7AF8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AB91183188E316800EB7AF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB911A1188E316800EB7AF8 /* ViewController.m in Sources */,
+				2AB911C6188E31EA00EB7AF8 /* JZRefreshControl.m in Sources */,
+				2AB911C9188E327600EB7AF8 /* MyRefreshControl.m in Sources */,
+				2AB9119B188E316800EB7AF8 /* AppDelegate.m in Sources */,
+				2AB91197188E316800EB7AF8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AB911A4188E316800EB7AF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB911B6188E316800EB7AF8 /* JZRefreshControlExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2AB911AE188E316800EB7AF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AB91186188E316800EB7AF8 /* JZRefreshControlExample */;
+			targetProxy = 2AB911AD188E316800EB7AF8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2AB91193188E316800EB7AF8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AB91194188E316800EB7AF8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2AB9119C188E316800EB7AF8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AB9119D188E316800EB7AF8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2AB911B2188E316800EB7AF8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AB911B3188E316800EB7AF8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2AB911B7188E316800EB7AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2AB911B8188E316800EB7AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2AB911BA188E316800EB7AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JZRefreshControlExample/JZRefreshControlExample-Prefix.pch";
+				INFOPLIST_FILE = "JZRefreshControlExample/JZRefreshControlExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2AB911BB188E316800EB7AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JZRefreshControlExample/JZRefreshControlExample-Prefix.pch";
+				INFOPLIST_FILE = "JZRefreshControlExample/JZRefreshControlExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2AB911BD188E316800EB7AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JZRefreshControlExample.app/JZRefreshControlExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JZRefreshControlExample/JZRefreshControlExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JZRefreshControlExampleTests/JZRefreshControlExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2AB911BE188E316800EB7AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JZRefreshControlExample.app/JZRefreshControlExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JZRefreshControlExample/JZRefreshControlExample-Prefix.pch";
+				INFOPLIST_FILE = "JZRefreshControlExampleTests/JZRefreshControlExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AB91182188E316800EB7AF8 /* Build configuration list for PBXProject "JZRefreshControlExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AB911B7188E316800EB7AF8 /* Debug */,
+				2AB911B8188E316800EB7AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AB911B9188E316800EB7AF8 /* Build configuration list for PBXNativeTarget "JZRefreshControlExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AB911BA188E316800EB7AF8 /* Debug */,
+				2AB911BB188E316800EB7AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2AB911BC188E316800EB7AF8 /* Build configuration list for PBXNativeTarget "JZRefreshControlExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AB911BD188E316800EB7AF8 /* Debug */,
+				2AB911BE188E316800EB7AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AB9117F188E316800EB7AF8 /* Project object */;
+}

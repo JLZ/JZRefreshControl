@@ -103,10 +103,14 @@
 	if (!self.isRefreshing)
 	{
 		_refreshing = YES;
-		[UIView animateWithDuration:0.2 animations:^{
-			[self.tableView setContentInset:UIEdgeInsetsMake(self.frame.size.height, 0, 0, 0)];
-		}];
-		self.displayLink.paused = NO;
+		dispatch_async(dispatch_get_main_queue(), ^{
+			self.displayLink.paused = NO;
+		});
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[UIView animateWithDuration:0.2 animations:^{
+				[self.tableView setContentInset:UIEdgeInsetsMake(self.frame.size.height, 0, 0, 0)];
+			}];
+		});
 	}
 }
 
