@@ -18,9 +18,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.refreshControl = [[MyRefreshControl alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 50)];
+	self.refreshControl = [[MyRefreshControl alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 100)];
 	self.refreshControl.tableView = self.tableView;
-	// Do any additional setup after loading the view, typically from a nib.
+	__weak ViewController *weakSelf = self;
+	self.refreshControl.refreshBlock = ^{
+		double delayInSeconds = ((float)rand() / RAND_MAX) * 3;
+		dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+		dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+			[weakSelf.refreshControl endRefreshing];
+		});
+	};
 }
 
 #pragma mark - UITableViewDelegate + UITableViewDataSource methods
