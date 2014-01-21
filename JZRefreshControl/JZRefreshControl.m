@@ -114,7 +114,7 @@
 			[UIView animateWithDuration:0.2
 							 animations:^{
 								 [self.tableView setContentInset:UIEdgeInsetsMake(self.frame.size.height, 0, 0, 0)];
-								 [self.tableView scrollRectToVisible:CGRectZero animated:NO];
+								 [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
 							 }
 							 completion:^(BOOL finished) {
 								 if (self.refreshBlock)
