@@ -480,6 +480,7 @@
 				2AB911BB188E316800EB7AF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AB911BC188E316800EB7AF8 /* Build configuration list for PBXNativeTarget "JZRefreshControlExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +489,7 @@
 				2AB911BE188E316800EB7AF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
