@@ -110,6 +110,9 @@
 	if (!self.isRefreshing)
 	{
 		_refreshing = YES;
+		if (self.tableView)
+			self.tableView.userInteractionEnabled = NO;
+		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[UIView animateWithDuration:0.2
 							 animations:^{
@@ -134,6 +137,9 @@
 						 _refreshing = NO;
 						 self.lastTime = 0;
 						 [self reset];
+						 
+						 if (self.tableView)
+							 self.tableView.userInteractionEnabled = YES;
 					 }];
 }
 
