@@ -23,6 +23,9 @@
 		2AB911B6188E316800EB7AF8 /* JZRefreshControlExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB911B5188E316800EB7AF8 /* JZRefreshControlExampleTests.m */; };
 		2AB911C6188E31EA00EB7AF8 /* JZRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB911C5188E31EA00EB7AF8 /* JZRefreshControl.m */; };
 		2AB911C9188E327600EB7AF8 /* MyRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB911C8188E327600EB7AF8 /* MyRefreshControl.m */; };
+		2AF7135C188F7FF300C40B10 /* Pac.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7135B188F7FF300C40B10 /* Pac.m */; };
+		2AF71360188F81AF00C40B10 /* pac-bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AF7135E188F81AF00C40B10 /* pac-bottom@2x.png */; };
+		2AF71361188F81AF00C40B10 /* pac-top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AF7135F188F81AF00C40B10 /* pac-top@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,11 @@
 		2AB911C5188E31EA00EB7AF8 /* JZRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZRefreshControl.m; path = ../JZRefreshControl/JZRefreshControl.m; sourceTree = "<group>"; };
 		2AB911C7188E327600EB7AF8 /* MyRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRefreshControl.h; sourceTree = "<group>"; };
 		2AB911C8188E327600EB7AF8 /* MyRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRefreshControl.m; sourceTree = "<group>"; };
+		2AF7135A188F7FF300C40B10 /* Pac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pac.h; path = Characters/Pac.h; sourceTree = "<group>"; };
+		2AF7135B188F7FF300C40B10 /* Pac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pac.m; path = Characters/Pac.m; sourceTree = "<group>"; };
+		2AF7135E188F81AF00C40B10 /* pac-bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pac-bottom@2x.png"; path = "images/pac-bottom@2x.png"; sourceTree = "<group>"; };
+		2AF7135F188F81AF00C40B10 /* pac-top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pac-top@2x.png"; path = "images/pac-top@2x.png"; sourceTree = "<group>"; };
+		2AF71362188F826A00C40B10 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Character.h; path = Characters/Character.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,8 @@
 		2AB91190188E316800EB7AF8 /* JZRefreshControlExample */ = {
 			isa = PBXGroup;
 			children = (
+				2AF7135D188F81A000C40B10 /* Images */,
+				2AF71359188F7FC700C40B10 /* Characters */,
 				2AB911C7188E327600EB7AF8 /* MyRefreshControl.h */,
 				2AB911C8188E327600EB7AF8 /* MyRefreshControl.m */,
 				2AB91199188E316800EB7AF8 /* AppDelegate.h */,
@@ -168,6 +178,25 @@
 				2AB911C5188E31EA00EB7AF8 /* JZRefreshControl.m */,
 			);
 			name = JZRefreshControl;
+			sourceTree = "<group>";
+		};
+		2AF71359188F7FC700C40B10 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				2AF7135A188F7FF300C40B10 /* Pac.h */,
+				2AF7135B188F7FF300C40B10 /* Pac.m */,
+				2AF71362188F826A00C40B10 /* Character.h */,
+			);
+			name = Characters;
+			sourceTree = "<group>";
+		};
+		2AF7135D188F81A000C40B10 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2AF7135E188F81AF00C40B10 /* pac-bottom@2x.png */,
+				2AF7135F188F81AF00C40B10 /* pac-top@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +275,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF71361188F81AF00C40B10 /* pac-top@2x.png in Resources */,
+				2AF71360188F81AF00C40B10 /* pac-bottom@2x.png in Resources */,
 				2AB911A3188E316800EB7AF8 /* Images.xcassets in Resources */,
 				2AB91195188E316800EB7AF8 /* InfoPlist.strings in Resources */,
 				2AB9119E188E316800EB7AF8 /* Main.storyboard in Resources */,
@@ -267,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF7135C188F7FF300C40B10 /* Pac.m in Sources */,
 				2AB911A1188E316800EB7AF8 /* ViewController.m in Sources */,
 				2AB911C6188E31EA00EB7AF8 /* JZRefreshControl.m in Sources */,
 				2AB911C9188E327600EB7AF8 /* MyRefreshControl.m in Sources */,
