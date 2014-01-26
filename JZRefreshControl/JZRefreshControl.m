@@ -32,6 +32,7 @@
     if (self) {
 		self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(refresh)];
 		[self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+		self.displayLink.paused = YES;
     }
     return self;
 }
@@ -109,6 +110,7 @@
 {
 	if (!self.isRefreshing)
 	{
+		self.displayLink.paused = NO;
 		_refreshing = YES;
 		if (self.tableView)
 			self.tableView.userInteractionEnabled = NO;
@@ -140,6 +142,8 @@
 						 
 						 if (self.tableView)
 							 self.tableView.userInteractionEnabled = YES;
+						 
+						 self.displayLink.paused = YES;
 					 }];
 }
 
