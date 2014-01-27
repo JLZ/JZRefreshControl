@@ -11,6 +11,7 @@
 @interface JZRefreshControl()
 @property (nonatomic, assign) NSTimeInterval lastTime;
 @property (nonatomic, strong) CADisplayLink *displayLink;
+@property (nonatomic, assign) BOOL processingEnd;
 + (CGRect)frameForFrame:(CGRect)frame;
 - (void)refresh;
 @end
@@ -68,15 +69,15 @@
 {
 	if (!self.isRefreshing)
 	{
-		CGFloat offset = scrollView.contentOffset.y;
-		CGFloat percent = CGFLOAT_MAX;
-		if (offset == 0)
-			percent = offset;
-		else if (offset < 0)
-			percent = MIN(ABS(offset) / self.frame.size.height, 1);
-		
-		if (percent < CGFLOAT_MAX)
-			[self amountOfControlVisible:percent];
+		CGFloat offset = scrollView.contentOffset.y + self.tableView.contentInset.top;
+			CGFloat percent = CGFLOAT_MAX;
+			if (offset == 0)
+				percent = offset;
+			else if (offset < 0)
+				percent = MIN(ABS(offset) / self.frame.size.height, 1);
+			
+			if (percent < CGFLOAT_MAX)
+				[self amountOfControlVisible:percent];
 	}
 }
 
@@ -93,12 +94,12 @@
 
 - (void)amountOfControlVisible:(CGFloat)visibility
 {
-	NSLog(@"Visible: %f", visibility);
+	
 }
 
 - (void)refreshingWithDelta:(CGFloat)delta
 {
-	NSLog(@"Refreshing: %f", delta);
+	
 }
 
 - (void)reset
@@ -110,20 +111,23 @@
 {
 	if (!self.isRefreshing)
 	{
-		self.displayLink.paused = NO;
 		_refreshing = YES;
+		self.displayLink.paused = NO;
 		if (self.tableView)
 			self.tableView.userInteractionEnabled = NO;
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[UIView animateWithDuration:0.2
 							 animations:^{
-								 [self.tableView setContentInset:UIEdgeInsetsMake(self.frame.size.height, 0, 0, 0)];
-								 [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+								 [self.tableView setContentInset:UIEdgeInsetsMake(self.tableView.contentInset.top + self.frame.size.height, 0, 0, 0)];
 							 }
 							 completion:^(BOOL finished) {
 								 if (self.refreshBlock)
-									 self.refreshBlock();
+								 {
+									 dispatch_async(dispatch_get_main_queue(), ^{
+										 self.refreshBlock();
+									 });
+								 }
 							 }];
 		});
 	}
@@ -131,20 +135,25 @@
 
 - (void)endRefreshing
 {
-	[UIView animateWithDuration:0.2
-					 animations:^{
-						 self.tableView.contentInset = UIEdgeInsetsZero;
-					 }
-					 completion:^(BOOL finished) {
-						 _refreshing = NO;
-						 self.lastTime = 0;
-						 [self reset];
-						 
-						 if (self.tableView)
-							 self.tableView.userInteractionEnabled = YES;
-						 
-						 self.displayLink.paused = YES;
-					 }];
+	if (self.isRefreshing && !self.processingEnd)
+	{
+		self.processingEnd = YES;
+		[UIView animateWithDuration:0.2
+						 animations:^{
+							 self.tableView.contentInset = UIEdgeInsetsMake(self.tableView.contentInset.top - self.frame.size.height, 0, 0, 0);
+						 }
+						 completion:^(BOOL finished) {
+							 self.lastTime = 0;
+							 [self reset];
+							 
+							 if (self.tableView)
+								 self.tableView.userInteractionEnabled = YES;
+							 
+							 _refreshing = NO;
+							 self.processingEnd = NO;
+							 self.displayLink.paused = YES;
+						 }];
+	}
 }
 
 @end
