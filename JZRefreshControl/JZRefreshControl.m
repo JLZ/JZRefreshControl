@@ -83,7 +83,7 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-	CGFloat offset = scrollView.contentOffset.y;
+	CGFloat offset = scrollView.contentOffset.y + self.tableView.contentInset.top;
 	if (offset <= -self.frame.size.height)
 	{
 		[self beginRefreshing];
