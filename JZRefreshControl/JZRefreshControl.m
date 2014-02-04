@@ -32,8 +32,8 @@
 	self = [super initWithFrame:[[self class] frameForFrame:frame]];
     if (self) {
 		self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(refresh)];
-		[self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 		self.displayLink.paused = YES;
+		[self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     }
     return self;
 }
@@ -60,7 +60,7 @@
 - (void)setTableView:(UITableView *)tableView
 {
 	_tableView = tableView;
-	[self.tableView addSubview:self];
+	[self.tableView insertSubview:self atIndex:0];
 }
 
 #pragma mark - UIScrollViewDelegate methods
@@ -70,14 +70,14 @@
 	if (!self.isRefreshing)
 	{
 		CGFloat offset = scrollView.contentOffset.y + self.tableView.contentInset.top;
-			CGFloat percent = CGFLOAT_MAX;
-			if (offset == 0)
-				percent = offset;
-			else if (offset < 0)
-				percent = MIN(ABS(offset) / self.frame.size.height, 1);
-			
-			if (percent < CGFLOAT_MAX)
-				[self amountOfControlVisible:percent];
+		CGFloat percent = CGFLOAT_MAX;
+		if (offset == 0)
+			percent = offset;
+		else if (offset < 0)
+			percent = MIN(ABS(offset) / self.frame.size.height, 1);
+		
+		if (percent < CGFLOAT_MAX)
+			[self amountOfControlVisible:percent];
 	}
 }
 
@@ -85,9 +85,7 @@
 {
 	CGFloat offset = scrollView.contentOffset.y + self.tableView.contentInset.top;
 	if (offset <= -self.frame.size.height)
-	{
 		[self beginRefreshing];
-	}
 }
 
 #pragma mark - Override these methods
@@ -120,6 +118,7 @@
 			[UIView animateWithDuration:0.2
 							 animations:^{
 								 [self.tableView setContentInset:UIEdgeInsetsMake(self.tableView.contentInset.top + self.frame.size.height, 0, 0, 0)];
+								 [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
 							 }
 							 completion:^(BOOL finished) {
 								 if (self.refreshBlock)

@@ -15,7 +15,7 @@ typedef enum {
 	PacStateClosing
 } PacState;
 
-static const CGFloat kStateTransitionTime = 0.15;
+static const CGFloat kStateTransitionTime = 0.14;
 static const CGFloat kMaxRotation = 60;
 
 @interface Pac()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1DB6E31898B30600E8E0E7 /* dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1DB6E21898B30600E8E0E7 /* dot@2x.png */; };
 		2AB9118B188E316800EB7AF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB9118A188E316800EB7AF8 /* Foundation.framework */; };
 		2AB9118D188E316800EB7AF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB9118C188E316800EB7AF8 /* CoreGraphics.framework */; };
 		2AB9118F188E316800EB7AF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB9118E188E316800EB7AF8 /* UIKit.framework */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A1DB6E21898B30600E8E0E7 /* dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dot@2x.png"; path = "images/dot@2x.png"; sourceTree = "<group>"; };
 		2AB91187188E316800EB7AF8 /* JZRefreshControlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JZRefreshControlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB9118A188E316800EB7AF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2AB9118C188E316800EB7AF8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -193,6 +195,7 @@
 		2AF7135D188F81A000C40B10 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2A1DB6E21898B30600E8E0E7 /* dot@2x.png */,
 				2AF7135E188F81AF00C40B10 /* pac-bottom@2x.png */,
 				2AF7135F188F81AF00C40B10 /* pac-top@2x.png */,
 			);
@@ -275,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1DB6E31898B30600E8E0E7 /* dot@2x.png in Resources */,
 				2AF71361188F81AF00C40B10 /* pac-top@2x.png in Resources */,
 				2AF71360188F81AF00C40B10 /* pac-bottom@2x.png in Resources */,
 				2AB911A3188E316800EB7AF8 /* Images.xcassets in Resources */,
