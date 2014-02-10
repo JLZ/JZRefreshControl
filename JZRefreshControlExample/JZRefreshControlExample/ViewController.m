@@ -18,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.refreshControl = [[MyRefreshControl alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 100)];
+	self.refreshControl = [[MyRefreshControl alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, [MyRefreshControl height])];
 	self.refreshControl.tableView = self.tableView;
 	__weak ViewController *weakSelf = self;
 	self.refreshControl.refreshBlock = ^{
@@ -45,7 +45,7 @@
     if (cell == nil)
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
 	
-	cell.textLabel.text = [NSString stringWithFormat:@"Cell #%d", indexPath.row];
+	cell.textLabel.text = [NSString stringWithFormat:@"Cell #%ld", (long)indexPath.row];
 	
 	return cell;
 }

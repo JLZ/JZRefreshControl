@@ -9,5 +9,5 @@
 #import "JZRefreshControl.h"
 
 @interface MyRefreshControl : JZRefreshControl
-
++ (CGFloat)height;
 @end
