@@ -14,6 +14,7 @@
 @property (nonatomic, assign) BOOL processingEnd;
 + (CGRect)frameForFrame:(CGRect)frame;
 - (void)refresh;
+- (void)beginRefreshingWithTargetContentOffset:(inout CGPoint *)targetContentOffset;
 @end
 
 @implementation JZRefreshControl
@@ -81,11 +82,11 @@
 	}
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
 	CGFloat offset = scrollView.contentOffset.y + self.tableView.contentInset.top;
 	if (offset <= -self.frame.size.height)
-		[self beginRefreshing];
+		[self beginRefreshingWithTargetContentOffset:targetContentOffset];
 }
 
 #pragma mark - Override these methods
@@ -105,7 +106,7 @@
 	
 }
 
-- (void)beginRefreshing
+- (void)beginRefreshingWithTargetContentOffset:(inout CGPoint *)targetContentOffset
 {
 	if (!self.isRefreshing)
 	{
@@ -114,22 +115,47 @@
 		if (self.tableView)
 			self.tableView.userInteractionEnabled = NO;
 		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[UIView animateWithDuration:0.2
-							 animations:^{
-								 [self.tableView setContentInset:UIEdgeInsetsMake(self.tableView.contentInset.top + self.frame.size.height, 0, 0, 0)];
+		CGFloat newInset = self.tableView.contentInset.top + self.frame.size.height;
+		// If positive targetContentOffset.y, it means the scrollview was scrolled
+		// upward on release. In this case, we need to change the targetContentOffset
+		// so the scrollview does not scroll past the refresh control, causing it to
+		// not be visible.
+		if (targetContentOffset->y > 0 && targetContentOffset->y < CGFLOAT_MAX)
+		{
+			targetContentOffset->y = -self.frame.size.height;
+			[self.tableView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
+			if (self.refreshBlock)
+			{
+				dispatch_async(dispatch_get_main_queue(), ^{
+					self.refreshBlock();
+				});
+			}
+		}
+		else
+		{
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[UIView animateWithDuration:0.2
+								 animations:^{
+								 [self.tableView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
 								 [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
-							 }
-							 completion:^(BOOL finished) {
-								 if (self.refreshBlock)
-								 {
-									 dispatch_async(dispatch_get_main_queue(), ^{
-										 self.refreshBlock();
-									 });
 								 }
-							 }];
-		});
+								 completion:^(BOOL finished) {
+									 if (self.refreshBlock)
+									 {
+										 dispatch_async(dispatch_get_main_queue(), ^{
+											 self.refreshBlock();
+										 });
+									 }
+								 }];
+			});
+		}
 	}
+}
+
+- (void)beginRefreshing
+{
+	CGPoint point = CGPointMake(CGFLOAT_MAX, CGFLOAT_MAX);
+	[self beginRefreshingWithTargetContentOffset:&point];
 }
 
 - (void)endRefreshing
