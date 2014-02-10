@@ -64,7 +64,7 @@ You can also force the refresh to happen without the user pulling.
 
 Take a look at the example for more info and a little Pacman action.
 
-
+![JZRefreshControl Example](JZRefreshControlDemo.png)
 
 Creator
 ------
