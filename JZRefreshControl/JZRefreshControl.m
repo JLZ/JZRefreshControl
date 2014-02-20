@@ -120,6 +120,8 @@
 	
 }
 
+#pragma mark - Refreshing methods
+
 - (void)beginRefreshingWithTargetContentOffset:(inout CGPoint *)targetContentOffset
 {
 	if (!self.isRefreshing)
