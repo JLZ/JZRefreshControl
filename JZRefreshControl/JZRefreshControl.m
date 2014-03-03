@@ -28,7 +28,7 @@
 @property (nonatomic, assign) BOOL processingEnd;
 + (CGRect)frameForFrame:(CGRect)frame;
 - (void)refresh;
-- (void)beginRefreshingWithTargetContentOffset:(inout CGPoint *)targetContentOffset;
+- (void)beginRefreshingWithTargetContentOffset:(inout CGPoint *)targetContentOffset velocity:(CGPoint)velocity;
 @end
 
 @implementation JZRefreshControl
@@ -100,7 +100,7 @@
 {
 	CGFloat offset = scrollView.contentOffset.y + self.tableView.contentInset.top;
 	if (offset <= -self.frame.size.height)
-		[self beginRefreshingWithTargetContentOffset:targetContentOffset];
+		[self beginRefreshingWithTargetContentOffset:targetContentOffset velocity:velocity];
 }
 
 #pragma mark - Override these methods
@@ -122,7 +122,7 @@
 
 #pragma mark - Refreshing methods
 
-- (void)beginRefreshingWithTargetContentOffset:(inout CGPoint *)targetContentOffset
+- (void)beginRefreshingWithTargetContentOffset:(inout CGPoint *)targetContentOffset velocity:(CGPoint)velocity
 {
 	if (!self.isRefreshing)
 	{
@@ -136,7 +136,7 @@
 		// upward on release. In this case, we need to change the targetContentOffset
 		// so the scrollview does not scroll past the refresh control, causing it to
 		// not be visible.
-		if (targetContentOffset->y > 0 && targetContentOffset->y < CGFLOAT_MAX)
+		if ((targetContentOffset->y > -self.tableView.contentInset.top || (targetContentOffset->y == -self.tableView.contentInset.top && velocity.y > 0)) && targetContentOffset->y < CGFLOAT_MAX)
 		{
 			targetContentOffset->y = -newInset;
 			[self.tableView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
@@ -171,7 +171,7 @@
 - (void)beginRefreshing
 {
 	CGPoint point = CGPointMake(CGFLOAT_MAX, CGFLOAT_MAX);
-	[self beginRefreshingWithTargetContentOffset:&point];
+	[self beginRefreshingWithTargetContentOffset:&point velocity:point];
 }
 
 - (void)endRefreshing
