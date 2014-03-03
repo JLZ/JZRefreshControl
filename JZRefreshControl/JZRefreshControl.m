@@ -138,7 +138,7 @@
 		// not be visible.
 		if (targetContentOffset->y > 0 && targetContentOffset->y < CGFLOAT_MAX)
 		{
-			targetContentOffset->y = -self.frame.size.height;
+			targetContentOffset->y = -newInset;
 			[self.tableView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
 			if (self.refreshBlock)
 			{
@@ -152,8 +152,8 @@
 			dispatch_async(dispatch_get_main_queue(), ^{
 				[UIView animateWithDuration:0.2
 								 animations:^{
-								 [self.tableView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
-								 [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+									 [self.tableView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
+									 [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
 								 }
 								 completion:^(BOOL finished) {
 									 if (self.refreshBlock)
