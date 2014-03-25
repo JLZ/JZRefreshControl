@@ -128,8 +128,6 @@
 	{
 		_refreshing = YES;
 		self.displayLink.paused = NO;
-		if (self.tableView)
-			self.tableView.userInteractionEnabled = NO;
 		
 		CGFloat newInset = self.tableView.contentInset.top + self.frame.size.height;
 		// If positive targetContentOffset.y, it means the scrollview was scrolled
@@ -152,8 +150,8 @@
 			dispatch_async(dispatch_get_main_queue(), ^{
 				[UIView animateWithDuration:0.2
 								 animations:^{
-									 [self.tableView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
-									 [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+								 [self.tableView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
+								 [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
 								 }
 								 completion:^(BOOL finished) {
 									 if (self.refreshBlock)
@@ -186,9 +184,6 @@
 						 completion:^(BOOL finished) {
 							 self.lastTime = 0;
 							 [self reset];
-							 
-							 if (self.tableView)
-								 self.tableView.userInteractionEnabled = YES;
 							 
 							 _refreshing = NO;
 							 self.processingEnd = NO;
