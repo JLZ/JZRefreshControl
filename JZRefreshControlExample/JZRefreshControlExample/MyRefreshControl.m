@@ -12,7 +12,6 @@
 static const CGFloat kViewHeight = 100;
 static const CGFloat kPixelsPerSecond = 150;
 static const NSInteger kStartingNumberOfDots = 5;
-static const NSInteger kMinNumberOfDots = 3;
 
 @interface MyRefreshControl()
 
