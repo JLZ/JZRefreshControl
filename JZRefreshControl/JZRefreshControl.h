@@ -29,7 +29,7 @@ typedef void (^VoidBlock)(void);
 /**
  A reference to the UITableView the refresh control will be added to
  */
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 /**
  The block that will be called when a pull to refresh is detected

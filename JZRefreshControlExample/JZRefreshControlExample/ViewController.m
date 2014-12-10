@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
 	self.refreshControl = [[MyRefreshControl alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, [MyRefreshControl height])];
-	self.refreshControl.tableView = self.tableView;
+	self.refreshControl.scrollView = self.tableView;
 	__weak ViewController *weakSelf = self;
 	self.refreshControl.refreshBlock = ^{
 		double delayInSeconds = 3;

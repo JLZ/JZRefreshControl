@@ -72,10 +72,10 @@
 	[super setFrame:[[self class] frameForFrame:frame]];
 }
 
-- (void)setTableView:(UITableView *)tableView
+- (void)setScrollView:(UIScrollView*)scrollView
 {
-	_tableView = tableView;
-	[self.tableView insertSubview:self atIndex:0];
+	_scrollView = scrollView;
+	[self.scrollView insertSubview:self atIndex:0];
 }
 
 #pragma mark - UIScrollViewDelegate methods
@@ -84,7 +84,7 @@
 {
 	if (!self.isRefreshing)
 	{
-		CGFloat offset = scrollView.contentOffset.y + self.tableView.contentInset.top;
+		CGFloat offset = scrollView.contentOffset.y + self.scrollView.contentInset.top;
 		CGFloat percent = CGFLOAT_MAX;
 		if (offset == 0)
 			percent = offset;
@@ -98,7 +98,7 @@
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-	CGFloat offset = scrollView.contentOffset.y + self.tableView.contentInset.top;
+	CGFloat offset = scrollView.contentOffset.y + self.scrollView.contentInset.top;
 	if (offset <= -self.frame.size.height)
 		[self beginRefreshingWithTargetContentOffset:targetContentOffset velocity:velocity];
 }
@@ -129,15 +129,15 @@
 		_refreshing = YES;
 		self.displayLink.paused = NO;
 		
-		CGFloat newInset = self.tableView.contentInset.top + self.frame.size.height;
+		CGFloat newInset = self.scrollView.contentInset.top + self.frame.size.height;
 		// If positive targetContentOffset.y, it means the scrollview was scrolled
 		// upward on release. In this case, we need to change the targetContentOffset
 		// so the scrollview does not scroll past the refresh control, causing it to
 		// not be visible.
-		if ((targetContentOffset->y > -self.tableView.contentInset.top || (targetContentOffset->y == -self.tableView.contentInset.top && velocity.y > 0)) && targetContentOffset->y < CGFLOAT_MAX)
+		if ((targetContentOffset->y > -self.scrollView.contentInset.top || (targetContentOffset->y == -self.scrollView.contentInset.top && velocity.y > 0)) && targetContentOffset->y < CGFLOAT_MAX)
 		{
 			targetContentOffset->y = -newInset;
-			[self.tableView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
+			[self.scrollView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
 			if (self.refreshBlock)
 			{
 				dispatch_async(dispatch_get_main_queue(), ^{
@@ -150,8 +150,8 @@
 			dispatch_async(dispatch_get_main_queue(), ^{
 				[UIView animateWithDuration:0.2
 								 animations:^{
-								 [self.tableView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
-								 [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+								 [self.scrollView setContentInset:UIEdgeInsetsMake(newInset, 0, 0, 0)];
+								 [self.scrollView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
 								 }
 								 completion:^(BOOL finished) {
 									 if (self.refreshBlock)
@@ -179,7 +179,7 @@
 		self.processingEnd = YES;
 		[UIView animateWithDuration:0.2
 						 animations:^{
-							 self.tableView.contentInset = UIEdgeInsetsMake(self.tableView.contentInset.top - self.frame.size.height, 0, 0, 0);
+							 self.scrollView.contentInset = UIEdgeInsetsMake(self.scrollView.contentInset.top - self.frame.size.height, 0, 0, 0);
 						 }
 						 completion:^(BOOL finished) {
 							 self.lastTime = 0;
